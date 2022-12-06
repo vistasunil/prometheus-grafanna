@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM python:3.7.0-alpine
 
 WORKDIR /usr/src/app
 
@@ -8,7 +8,7 @@ RUN apk --update add --no-cache mariadb-dev gcc musl-dev && \
     apk del gcc musl-dev
 
 RUN apk --update add bash && \
-    wget -q -O /wait-for-it.sh https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh && \
+    wget -q -O /wait-for-it.sh https://raw.githubusercontent.com/vistasunil/wait-for-it/master/wait-for-it.sh && \
     chmod +x /wait-for-it.sh
 
 COPY . .
